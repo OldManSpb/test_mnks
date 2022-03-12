@@ -14,7 +14,7 @@ class ArrayHandler
 public:
   
   ArrayHandler(vector<vector <int>> a) : source_arr(a) {}
-  ~ArrayHandler();
+  ~ArrayHandler(){}
   
   //Make deductions as required in the test
   void process(int nb)
@@ -87,12 +87,12 @@ private:
 
 int main()
 {
-    ArrayHandler* arrH = new ArrayHandler({{1, 10}, {2, 11}, {3, 11}, {4, 11}, {5, 11}, {6, 10}, {7, 11}, {8, 11}, {9, 11}, {10, 11}, {11, 10}});
-    arrH->process(3);
-    cout << "Original array: " << arrH->get_source_array_printable() << endl;
-    cout << "Result array (3): " << arrH->get_result_array_printable() << endl;
-    arrH->process(4);
-    cout << "Result array (4): " << arrH->get_result_array_printable() << endl;
+    ArrayHandler arrayHandler({{1, 10}, {2, 11}, {3, 11}, {4, 11}, {5, 11}, {6, 10}, {7, 11}, {8, 11}, {9, 11}, {10, 11}, {11, 10}});
+    arrayHandler.process(3);
+    cout << "Original array: " << arrayHandler.get_source_array_printable() << endl;
+    cout << "Result array (3): " << arrayHandler.get_result_array_printable() << endl;
+    arrayHandler.process(4);
+    cout << "Result array (4): " << arrayHandler.get_result_array_printable() << endl;
     
     return 0;
 }
