@@ -17,7 +17,7 @@ public:
   ~ArrayHandler(){}
   
   //Make deductions as required in the test
-  void process(int nb)
+  void process(const int nb)
   {
       assert(nb > 2);
       int repeats_counter = 1;
@@ -32,14 +32,15 @@ public:
            result_arr.push_back(source_arr[i]);
            repeats_counter = 1;
         }
-        //Push if counter is equal first or nb 
-        else{
-            if(repeats_counter == 1 || repeats_counter == nb)
+        //Push if counter is equal first and next member is equal current
+        else
+        {
+            if(repeats_counter == 1)
             {
                 result_arr.push_back(source_arr[i]);
             }
             //Increment counter to nb and reset it
-            if(++repeats_counter > nb)
+            if(++repeats_counter >= nb)
             { 
                 repeats_counter = 1;
             }
